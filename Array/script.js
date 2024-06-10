@@ -10,3 +10,9 @@ console.log(["lions", "tigers", "bears oh my!"].join(" & "));
 
 // it takes 2 arrays, and return single array concatinating
 console.log([1, 2, 3].concat([4, 5, 6]));
+
+// concat does not mutate the actual array
+let array1 = [1, 2, 3];
+let array2 = array1.concat([4]);
+console.log(array2); // it's new array after concatination
+console.log(array1); // it's unchanged array
