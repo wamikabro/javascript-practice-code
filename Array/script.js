@@ -16,3 +16,9 @@ let array1 = [1, 2, 3];
 let array2 = array1.concat([4]);
 console.log(array2); // it's new array after concatination
 console.log(array1); // it's unchanged array
+
+// since arrays are references in Javascript just like Array List in Java unlike Array of java
+let array3 = [1, 2, 3];
+let array4 = array3;
+array3[2] = 3.1; // array4 is also changed since it has reference to array3
+console.log(array4);
