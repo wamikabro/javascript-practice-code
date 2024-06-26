@@ -108,10 +108,28 @@
         // TODO 1
         // Given an array of possible answers, a correct answer value, and a number of choices to get,
         // return a list of that many choices, including the correct answer and others from the array
-        function getMultipleChoices(n, correctAnswer, array) {
+        function getMultipleChoices(n, correctAnswer, allOptionsArray) {
             // Use a while loop and the getRandomElement() function
             // Make sure there are no duplicates in the array
+            const choices = [];
 
+            // push the correct answer to the array of options to show the user
+            choices.push(correctAnswer);
+            // randomely choose other options to show the user
+            while (choices.length < n) {
+
+                const candidate = getRandomElement(allOptionsArray);
+
+                // if the choice is already in the optoins array, don't add again
+                // we don't want our user to see same option on multiple buttons
+                if (choices.includes(candidate)) {
+                    return;
+                }
+
+                choices.push(candidate);
+            }
+
+            return shuffleArray(choices);
         }
 
 
@@ -121,7 +139,13 @@
         function getBreedFromURL(url) {
             // The string method .split(char) may come in handy
             // Try to use destructuring as much as you can
+            let unsplitBreed = url.split("/")[4]; // take out breed name from URL
+            let [breed, subreed] = unsplitBreed.split("-"); // split words separately if 2 words
 
+            // it caused an issue, if it's single word, it will have space because 
+            // the word got joined with undefined word and space. 
+            // so we will use trim at the end to remove extra unwanted spaces.
+            return [subbreed, breed].join(" ").trim();
         }
 
 
