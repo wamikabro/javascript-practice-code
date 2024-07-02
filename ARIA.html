@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA</title>
+    <style>
+        .visuallyHidden {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div role="button" aria-label="Click Me" onclick="clicked">Click Me</div>
+
+    <div class="visuallyHidden" id="idOfLabel">This is a button</div>
+    <div role="button" aria-labelledby="idOfLabel" onclick="clicked">Click Here</div>
+</body>
+
+</html>
