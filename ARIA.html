@@ -29,6 +29,16 @@
         aria labelled by</div>
 
     <div role="button" aria-labelledby="idOfLabel" aria-describedby="idOfDescription" onclick="clicked">Click Here</div>
+
+    <p aria-live="assertive">Rider is 10 minutes away.</p>
+
+    <button aria-label="Click to bring rider closer" onclick="changeP()">Click To Bring Rider Closer</button>
+
 </body>
+<script>
+    function changeP() {
+        document.getElementsByTagName("p")[0].innerText = "The rider is 5 minutes away.";
+    }
+</script>
 
 </html>
