@@ -23,6 +23,12 @@
 
     <div class="visuallyHidden" id="idOfLabel">This is a button</div>
     <div role="button" aria-labelledby="idOfLabel" onclick="clicked">Click Here</div>
+
+    <div class="visuallyHidden" id="idOfLabel">This is a button</div>
+    <div class="visuallyHidden" id="idOfDescription">This button does nothing. It's created to test aria describedby and
+        aria labelled by</div>
+
+    <div role="button" aria-labelledby="idOfLabel" aria-describedby="idOfDescription" onclick="clicked">Click Here</div>
 </body>
 
 </html>
