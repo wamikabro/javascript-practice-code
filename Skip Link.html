@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skip Link</title>
+    <style>
+        #skiplink {
+            position: absolute;
+            transform: translateY(-200%);
+            transform: translateX(-300%);
+        }
+
+        #skiplink:focus {
+            transform: translateY(0%);
+            transform: translateX(300%);
+        }
+    </style>
+</head>
+
+<body>
+    <a id="skiplink" href="#foo">Skip to main content</a>
+    <nav>
+        <button>I'll be ignored if you skip to content</button>
+        <button id="foo">It will get skipped to here</button>
+    </nav>
+</body>
+
+</html>
