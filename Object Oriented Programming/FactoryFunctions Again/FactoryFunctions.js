@@ -2,17 +2,15 @@ function myFactoryFunction(name, score) {
   const newUser = {};
   newUser.name = name;
   newUser.score = score;
-
-  // don't make this mistake of making function inside myFactoryFunction
-  // instead of newUser object, because you're only returning that object
-  // other thigs that aren't related to that object are automatically destroyed
-  // but object is kept in backpack
-  // function increment() {
-  //   newUser.score++;
-  // }
+  let unknownNumber = 1;
 
   newUser.increment = function () {
     return (newUser.score = score + 1);
+  };
+
+  newUser.incrementUnknwnNumber = function () {
+    unknownNumber++;
+    return unknownNumber;
   };
 
   return newUser;
@@ -20,6 +18,4 @@ function myFactoryFunction(name, score) {
 
 const user1 = myFactoryFunction("wamique", 20);
 
-console.log(user1.name);
-console.log(user1.score);
-console.log(user1.increment());
+console.log(user1.incrementUnknwnNumber()); // 2
