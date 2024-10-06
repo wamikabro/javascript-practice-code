@@ -15,10 +15,6 @@ deepJS.enrollStudent(105);
 deepJS.enrollStudent(664);
 deepJS.enrollStudent(374);
 
-var currentEnrollment = [];
-
-var studentRecords = [];
-
 deepJS.printCurrentEnrollment();
 console.log("----");
 deepJS.enrollPaidStudent();
